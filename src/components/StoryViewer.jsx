@@ -1,4 +1,5 @@
 import { BadgeCheck, X } from 'lucide-react'
+import moment from 'moment/moment';
 import React, { useState } from 'react'
 import { useEffect } from 'react';
 
@@ -71,14 +72,36 @@ const StoryViewer = ({viewStory, setViewStory}) => {
             </div>
         </div>
         
-        {/* User info - top left*/}
-        <div className='absolute top-4 left-4 flex items-center space-x-3 p-2 px-4 sm:p-4 sm-px-8 backdrop-blur-6xl rounded-full'>
-            <img src={viewStory.user?.profile_picture} alt="{viewStory.user.name}" className='ize-7 sm-size-8 rounded-full object-cover border border-white' />
-            <div className='text-white font-medium flex items-center gap-1.5'>
-                <span>{viewStory.user?.full_name}</span>
-                <BadgeCheck size={18} />
+            {/* Minimalist User Info */}
+            <div className="absolute top-6 left-6 z-10">
+                <div className="flex items-center space-x-3 bg-gradient-to-r from-black/60 to-transparent backdrop-blur-lg rounded-full pr-6 pl-3 py-2 border border-white/10">
+                    {/* Avatar */}
+                    <div className="relative">
+                        <div className="w-12 h-12 rounded-full bg-gradient-to-br from-blue-500 to-purple-600 p-0.5">
+                            <img
+                                src={viewStory.user?.profile_picture}
+                                alt={viewStory.user?.full_name}
+                                className="w-full h-full rounded-full object-cover border-2 border-white"
+                            />
+                        </div>
+                    </div>
+
+                    {/* User Info */}
+                    <div className="flex flex-col">
+                        <div className="flex items-center space-x-2">
+                            <span className="text-white font-bold text-base tracking-tight">
+                                {viewStory.user?.full_name}
+                            </span>
+                            {viewStory.user?.is_verified && (
+                                <BadgeCheck className="w-5 h-5 text-blue-400" fill="currentColor" />
+                            )}
+                        </div>
+                        <span className="text-white/70 text-xs font-medium">
+                            {moment(viewStory.createdAt).fromNow()}
+                        </span>
+                    </div>
+                </div>
             </div>
-        </div>
 
           {/* Close button */}
           <button onClick={handleClose} className='absolute top-4 right-4 text-white text-3xl font-bold focus-outline-none'>

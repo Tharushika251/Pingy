@@ -21,7 +21,7 @@ const RecentMessages = () => {
         <div className='flex flex-col max-h-56 overflow-y-scroll no-scrollbar'>
             {messages.map((message, index) => (
                 <div key={index} className='flex items-center gap-3 mb-3 last:mb-0'>
-                    {/* <Link to={`/messages/${message.from_user_id._id}`} key={index} className='flex items-start gap-2 py-2 hover-bg-slate-100 w-full'>
+                    <Link to={`/messages/${message.from_user_id._id}`} key={index} className='flex items-start gap-2 py-2 hover-bg-slate-100 w-full'>
                         <img src={message.from_user_id.profile_picture} alt="" className='w-8 h-8 rounded-full'/>
                         <div className='w-full'>
                             <div className='flex justify-between'>
@@ -35,7 +35,7 @@ const RecentMessages = () => {
                                 }
                             </div>
                         </div>
-                    </Link> */}
+                    </Link>
                 </div>
             ))}
         </div>

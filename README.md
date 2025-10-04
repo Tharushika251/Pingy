@@ -29,9 +29,6 @@ A modern, responsive social media web application built with React Vite and Tail
 - **Modern UI/UX** - Clean, intuitive interface
 - **Performance Optimized** - Fast loading with Vite
 
-![Mobile View](./screenshots/22m.png) 
-![Mobile View](./screenshots/23m.png) 
-
 ## 🚀 Getting Started
 
 ### Prerequisites
@@ -146,3 +143,8 @@ A modern, responsive social media web application built with React Vite and Tail
 ![Connections](./screenshots/19.png)
 
 - **Post History** - View all shared posts and media
+
+## Mobile View
+
+![Mobile View](./screenshots/22m.png) 
+![Mobile View](./screenshots/23m.png) 
